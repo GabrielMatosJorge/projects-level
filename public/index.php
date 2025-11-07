@@ -1,6 +1,7 @@
 <?php
 // Importa o autoload do Composer para carregar as rotas
-require __DIR__ . '/../vendor/autoload.php'; // Obrigatório pro projeto.
+require __DIR__ . '/../vendor/autoload.php';
+
 
 
 // Função para renderizar as telas com layout
@@ -22,7 +23,7 @@ function render_sem_template($view, $data = [])
     extract($data);
     ob_start();
     // Inclui a tela que enviamos especifica
-    require __DIR__ . '/../app/Views/' . $view;
+    require __DIR__ . '/../app/Views/'. $view;
 }
 
 // Obtém a URL do navegador
@@ -34,7 +35,7 @@ if ($url == "/" || $url == "/index.php") {
     // require __DIR__ . '/../app/Views/home.php'; Require significa REQUERER UM LINK - ou seja, ele chama o arquivo aí atrás que é o home
     render_sem_template('home.php', [
         'title' => 'Bem-vindo!',
-        'lenda' => 'Agora eu sou uma lêndia do PHP!'
+        'lenda' => 'Agora eu sou uma lenda do PHP!'
     ]);
 } else if ($url == "/sobre") {
     render('sobre.php', ['title' => 'Sobre a Página']);

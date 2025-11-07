@@ -26,7 +26,7 @@
             <li><a class="dropdown-item" href="/usuarios">Listagem de Usuários</a></li>
             <li><a class="dropdown-item" href="/usuarios/inserir">Cadastro de Usuários</a></li>
             <li><a class="dropdown-item" href="/produtos">produtos</a></li>
-             <li><a class="dropdown-item" href="/produtos/sobre">cadastrar Produtos</a></li>
+             <li><a class="dropdown-item" href="/produtos/inserir">cadastrar Produtos</a></li>
 
           </ul>
         </li>

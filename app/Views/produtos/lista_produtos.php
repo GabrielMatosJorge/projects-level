@@ -8,29 +8,11 @@
   <link rel="stylesheet" href="/css/styles.css"> 
   
 </head>
-<body>
+
+  
+<body class="container">
 
 
-  <nav class="navbar navbar-expand-lg navbar-dark px-4">
-    <a class="navbar-brand" href="#">Gestão de Produtos</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarContent">
-     <ul class="navbar-nav me-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" role="button" aria-expanded="false">
-            Usuários
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/usuarios">Listagem de Usuários</a></li>
-            <li><a class="dropdown-item" href="/usuarios/inserir">Cadastro de Usuários</a></li>
-            <li><a class="dropdown-item" href="/produtos">produtos</a></li>
-            <li><a class="dropdown-item" href="/produtos/sobre">cadastrar Produtos</a></li>
-          </ul>
-        </li>
-      </ul>
 
           <main class="container my-5">
   <h2 class="mb-4">Lista de Produtos</h2>
@@ -90,3 +72,7 @@
     </li>
   </ul>
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
