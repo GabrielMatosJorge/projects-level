@@ -3,37 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Listagem de Usuários - Administração</title>
+  <title><?= $tile?> </title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-   body {
-    background-image: linear-gradient(135deg, #fbff00, #ff0000a9, black), /* gradiente com transparência */
-    url('https://wallpapers-clan.com/wp-content/uploads/2025/06/chainsaw-man-power-celestial-demon-desktop-wallpaper-cover.jpg');                 /* imagem de fundo */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 30px;
-    min-height: 112vh;
-}
-    .navbar {
-      background-color: #c82333;
-    }
-    .footer {
-      background-color: #c82333;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-    }
-    .btn-editar {
-      background-color: #ffc107;
-      color: black;
-    }
-    .btn-excluir {
-      background-color: #dc3545;
-      color: white;
-    }
-  </style>
+
 </head>
 <body>
   <div class="d-flex flex-column min-vh-100">
@@ -51,7 +23,7 @@
     <main class="container my-3 flex-grow-1">
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h2>Listagem de Usuários</h2>
-        <a href="cadastro_usuario.html" class="btn btn-success">ADICIONAR</a>
+        <a href="usuarios/inserir" class="btn btn-success">ADICIONAR</a>
       </div>
 
       <table class="table table-bordered table-hover">
@@ -91,6 +63,17 @@
         </tbody>
       </table>
     </main>
+
+      <div class="row">
+    <div class="col-md-12 text-end">
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </div>
+  </div>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 
     
     

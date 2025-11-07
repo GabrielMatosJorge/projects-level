@@ -12,25 +12,25 @@
 <body class="container">
   
     <form action="usuarios/lista_usuarios" method="get">
-  <h3 class="mb-4">Cadastro de Usuários</h3>
+  <h3 class="mb-4">Cadastro de Produtos</h3>
   <div class="row mb-3 text-black fw-bold">
     <div class="col-md-6">
       <label for="nome" class="form-label">Nome</label>
       <input type="text" class="form-control" id="nome" name="nome" required>
     </div>
     <div class="col-md-6">
-      <label for="email" class="form-label">Email</label>
+      <label for="email" class="form-label">comprovante</label>
       <input type="email" class="form-control" id="email" name="email" required>
     </div>
   </div>
 
   <div class="row mb-3 text-black fw-bold">
     <div class="col-md-6">
-      <label for="celular" class="form-label">Celular</label>
+      <label for="celular" class="form-label">ID</label>
       <input type="text" class="form-control" id="celular" name="celular">
     </div>
     <div class="col-md-6">
-      <label for="nascimento" class="form-label">Data de Nascimento</label>
+      <label for="nascimento" class="form-label">Data de Entrega</label>
       <input type="date" class="form-control" id="nascimento" name="nascimento">
     </div>
   </div>
@@ -41,11 +41,12 @@
       <input type="text" class="form-control" id="cpf" name="cpf">
     </div>
     <div class="col-md-6">
-      <label for="nivel" class="form-label">Nível de Acesso</label>
+      <label for="nivel" class="form-label">Tamanho Produto</label>
       <select class="form-select" id="nivel" name="nivel" required>
         <option value="">-- ESCOLHA --</option>
-        <option value="admin">Administrador</option>
-        <option value="usuario">Usuário</option>
+        <option value="admin">Grande</option>
+        <option value="medio">Médio</option>
+        <option value="pequeno">Pequeno</option>
       </select>
     </div>
   </div>

@@ -17,12 +17,17 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <ul>
+     <ul class="navbar-nav me-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+            Usuários
+          </a>
+          <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/usuarios">Listagem de Usuários</a></li>
             <li><a class="dropdown-item" href="/usuarios/inserir">Cadastro de Usuários</a></li>
-            <li><a class="dropdown-item" href="/home">dashboard</a></li>
+            <li><a class="dropdown-item" href="/produtos">produtos</a></li>
+             <li><a class="dropdown-item" href="/produtos/sobre">cadastrar Produtos</a></li>
+
           </ul>
         </li>
       </ul>

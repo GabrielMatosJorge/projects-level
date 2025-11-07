@@ -1,52 +1,58 @@
 <?php
-// Importa o autoload do computador para carregar as rotas //
-require __DIR__ . '/../vendor/autoload.php';
+// Importa o autoload do Composer para carregar as rotas
+require __DIR__ . '/../vendor/autoload.php'; // Obrigatório pro projeto.
 
-function render($view, $data = []) 
+
+// Função para renderizar as telas com layout
+function render($view, $data = [])
 {
-  // extrai os dados recebidos e converte em variáveis //
-  extract($data);
-  ob_start();
-  // inclui a tela que enviamos específica // 
-  require __DIR__ . '/../app/Views/' . $view;
-  $content = ob_get_clean();
-  require __DIR__ . '/../app/views/layouts/base.php';
-
+    // Extrai os dados recebidos e os transforma em variáveis.
+    extract($data);
+    ob_start();
+    // Inclui a tela que enviamos especifica
+    require __DIR__ . '/../app/Views/' . $view;
+    $content = ob_get_clean();
+    // Inclui o layout base, que usará a variável $content
+    require __DIR__ . '/../app/Views/layouts/base.php';
 }
 
-function render_sem_template($view, $data = []) 
+function render_sem_template($view, $data = [])
 {
-  // extrai os dados recebidos e converte em variáveis //
-  extract($data);
-  ob_start();
-  // inclui a tela que enviamos específica // 
-  require __DIR__ . '/../app/Views/' . $view;
+    // Extrai os dados recebidos e os transforma em variáveis.
+    extract($data);
+    ob_start();
+    // Inclui a tela que enviamos especifica
+    require __DIR__ . '/../app/Views/' . $view;
 }
 
-// Obtem a URL do navegador; //
-$url = parse_url($_SERVER ['REQUEST_URI'], PHP_URL_PATH);
+// Obtém a URL do navegador
+$url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-if ($url == "/" || $url === '/index.php') {
-  render_sem_template('home.php', [
-    'title' => 'Bem-Vindo!',
-    'lenda' => 'Agora eu sou a lenda do PHP!',
-  ]);
-} else if ($url == "/sobre"){
-  render('sobre.php', [ 'title' => 'sobre a página']);
+// NAVEGAÇÃO GERAL
+
+if ($url == "/" || $url == "/index.php") {
+    // require __DIR__ . '/../app/Views/home.php'; Require significa REQUERER UM LINK - ou seja, ele chama o arquivo aí atrás que é o home
+    render_sem_template('home.php', [
+        'title' => 'Bem-vindo!',
+        'lenda' => 'Agora eu sou uma lêndia do PHP!'
+    ]);
+} else if ($url == "/sobre") {
+    render('sobre.php', ['title' => 'Sobre a Página']);
 }
 
-//usuarios
 
-else if ($url == "/usuarios"){
-  render('usuarios/lista_usuarios.php', [ 'title' => 'listar usuario']);
-}else if ($url == "/usuarios/inserir"){
-  render('usuarios/form_usuarios.php', [ 'title' => 'cadastrar usuarios']);
+// USUÁRIOS
+
+else if ($url == "/usuarios") {
+    render('usuarios/lista_usuarios.php', ['title' => 'Listar Usuários!']);
+} else if ($url == "/usuarios/inserir") {
+    render('usuarios/form_usuarios.php', ['title' => 'Cadastrar Usuário!']);
 }
 
-else if ($url == "/produtos"){
-  render('produtos/lista_produtos.php', [ 'title' => 'listar produtos']);
-}else if ($url == "/produtos/sobre"){
-  render('produtos/form_produtos.php', [ 'title' => 'cadastrar produtos']);
-}
+// PRODUTOS
 
-?>
+else if ($url == "/produtos") {
+    render('produtos/lista_produtos.php', ['title' => 'Listar Produtos!']);
+} else if ($url == "/produtos/inserir") {
+    render('produtos/form_produtos.php', ['title' => 'Cadastrar Produto!']);
+}
