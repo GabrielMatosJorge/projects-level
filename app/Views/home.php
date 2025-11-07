@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&family=Public+Sans:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet"  href="/css/style.css">
-    <title>Agenda de contatos</title>
+    <title><?= $title ?></title>
 </head>
 <body>
     
@@ -36,6 +36,8 @@
     </header>
  
     <h1 class="introducao"> Novos Negócios, <br> novas responsabilidades</h1>
+    <h2><?=$lenda ?></h2>
+    
     <section class="sobre" id="sobre">
         <div class="sobre-info">
             <h1>Sobre</h1>
@@ -46,10 +48,10 @@
            </p>
         </div>
         <div class="sobre-img">
-            <img src="imagens/torre.jpg" alt="Sobre 1">
+            <img src="imgs/torre.jpg" alt="Sobre 1">
         </div>
         <div class="sobre-img">
-            <img src="imagens/mato.jpg" alt="Sobre 2">
+            <img src="imgs/mato.jpg" alt="Sobre 2">
         </div>
     </section>
 
@@ -58,15 +60,15 @@
         <div class="produtos-container">
         <div class="produtos-item purple">
             <h2>Agenda</h2>
-            <img src="imagens/agenda 2.png" alt="produtos1">
+            <img src="imgs/agenda 2.png" alt="produtos1">
         </div>
         <div class="produtos-item pink">
             <h2>Treinamento</h2>
-            <img src="imagens/Administracao_entenda_as_diferencas_entre_o_Tecnico_e_a_Graduacao-750x470.png" alt="produtos2">
+            <img src="imgs/Administracao_entenda_as_diferencas_entre_o_Tecnico_e_a_Graduacao-750x470.png" alt="produtos2">
         </div>
         <div class="produtos-item blue">
             <h2>Consultoria</h2>
-            <img src="imagens/trabalho-consultoria-empresarial.png" alt="produtos3">
+            <img src="imgs/trabalho-consultoria-empresarial.png" alt="produtos3">
         </div>
 
         </div>
