@@ -14,6 +14,7 @@
     <form action="usuarios/lista_usuarios" method="get">
   <h3 class="mb-4">Cadastro de Usuários</h3>
   <div class="row mb-3 text-black fw-bold">
+    
     <div class="col-md-6">
       <label for="nome" class="form-label">Nome</label>
       <input type="text" class="form-control" id="nome" name="nome" required>
@@ -22,18 +23,13 @@
       <label for="email" class="form-label">Email</label>
       <input type="email" class="form-control" id="email" name="email" required>
     </div>
+    <div class="col-md-6">
+      <label for="senha" class="form-label">senha</label>
+      <input type="number" class="form-control" id="senha" name="senha" required>
+    </div>
+
   </div>
 
-  <div class="row mb-3 text-black fw-bold">
-    <div class="col-md-6">
-      <label for="celular" class="form-label">Celular</label>
-      <input type="text" class="form-control" id="celular" name="celular">
-    </div>
-    <div class="col-md-6">
-      <label for="nascimento" class="form-label">Data de Nascimento</label>
-      <input type="date" class="form-control" id="nascimento" name="nascimento">
-    </div>
-  </div>
 
   <div class="row mb-3 text-black fw-bold">
     <div class="col-md-6">
@@ -50,14 +46,29 @@
     </div>
   </div>
 
+   <div class="row mb-3 text-black fw-bold">
+    <div class="col-md-6">
+      <label for="celular" class="form-label">Celular</label>
+      <input type="text" class="form-control" id="celular" name="celular">
+    </div>
+    <div class="col-md-6">
+      <label for="nascimento" class="form-label">Data de Nascimento</label>
+      <input type="date" class="form-control" id="nascimento" name="nascimento">
+    </div>
+  </div>
+
   <div class="row mb-3 text-black fw-bold">
     <div class="col-md-4">
       <label for="cep" class="form-label">CEP</label>
       <input type="text" class="form-control" id="cep" name="cep">
     </div>
     <div class="col-md-8">
-      <label for="endereco" class="form-label">Endereço</label>
-      <input type="text" class="form-control" id="endereco" name="endereco">
+      <label for="rua" class="form-label">Rua</label>
+      <input type="text" class="form-control" id="rua" name="rua">
+    </div>
+    <div class="col-md-8">
+      <label for="bairro" class="form-label">Bairro</label>
+      <input type="text" class="form-control" id="bairro" name="bairro">
     </div>
   </div>
 

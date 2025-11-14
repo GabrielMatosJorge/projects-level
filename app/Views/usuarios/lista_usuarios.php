@@ -23,7 +23,7 @@
     <main class="container my-3 flex-grow-1">
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h2>Listagem de Usuários</h2>
-        <a href="usuarios/inserir" class="btn btn-success">ADICIONAR</a>
+        <a href="/usuarios/inserir" class="btn btn-success">NOVO CLIENTE</a>
       </div>
 
       <table class="table table-bordered table-hover">
@@ -34,41 +34,46 @@
             <th>EMAIL</th>
             <th>CELULAR</th>
             <th>NÍVEL</th>
-            <th>AÇÕES</th>
+            <th>data de nascimento</th>
+            <th>celular</th>
+            <th>rua</th>
+            <th>numero</th>
+            <th>complemento</th>
+            <th>bairro</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+    
           </tr>
         </thead>
         <tbody>
+          <?php foreach($usuarios as $u):  ?>
           <tr>
-            <td>1</td>
-            <td>Usuário 1</td>
-            <td>user1@example.com</td>
-            <td>1234567890</td>
-            <td>Usuário</td>
-            <td>
-              <a href="#" class="btn btn-editar">Editar</a>
-              <a href="#" class="btn btn-excluir">Excluir</a>
-            </td>
+            <td><?=  $u['id_usuario'] ?> </td>
+            <td><?=  $u['nome'] ?></td>
+            <td><?=  $u['cpf'] ?></td>
+            <td><?=  $u['data_nascimento'] ?></td>
+            <td><?=  $u['celular'] ?></td>
+            <td><?=  $u['rua'] ?></td>
+            <td><?=  $u['numero'] ?></td>
+            <td><?=  $u['complemento'] ?></td>
+            <td><?=  $u['bairro'] ?></td>
+            <td><?=  $u['cidade'] ?></td>
+            <td><?=  $u['cep'] ?></td>
+            <td><?=  $u['estado'] ?></td>
+            <td><?=  $u['email'] ?></td>
+            <td><?=  $u['nivel_de_acesso'] ?></td>
           </tr>
-          <tr>
-            <td>2</td>
-            <td>Usuário 2</td>
-            <td>user2@example.com</td>
-            <td>9876543210</td>
-            <td>Administrador</td>
-            <td>
-              <a href="#" class="btn btn-editar">Editar</a>
-              <a href="#" class="btn btn-excluir">Excluir</a>
-            </td>
-          </tr>
-        </tbody>
+           
+          <?php endforeach ?>
+          </tbody>            
       </table>
+
+      <a href="#" class="btn btn-editar btn btn-primary">Editar</a>
+      <a href="#" class="btn btn-excluir btn btn-danger">Excluir</a>
     </main>
 
-      <div class="row">
-    <div class="col-md-12 text-end">
-      <button type="submit" class="btn btn-primary">Cadastrar</button>
-    </div>
-  </div>
+
 </form>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

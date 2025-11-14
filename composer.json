@@ -1,14 +1,14 @@
 {
-    "name": "usuario/projects-level",
+    "name": "0200782413039/projects-level",
     "type": "n",
     "autoload": {
         "psr-4": {
-            "Usuario\\ProjectsLevel\\": "src/"
+            "App\\": "app"
         }
     },
     "authors": [
         {
-            "name": "Gabriel Matos Jorge",
+            "name": "gabriel matos jorge",
             "email": "gabriel.jorge01@fatec.sp.gov.br"
         }
     ],

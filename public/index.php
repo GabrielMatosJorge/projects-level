@@ -2,7 +2,7 @@
 // Importa o autoload do Composer para carregar as rotas
 require __DIR__ . '/../vendor/autoload.php';
 
-
+use App\Controllers\UsuarioController;
 
 // Função para renderizar as telas com layout
 function render($view, $data = [])
@@ -45,7 +45,10 @@ if ($url == "/" || $url == "/index.php") {
 // USUÁRIOS
 
 else if ($url == "/usuarios") {
-    render('usuarios/lista_usuarios.php', ['title' => 'Listar Usuários!']);
+
+$controller = new UsuarioController();
+$controller->listar();
+
 } else if ($url == "/usuarios/inserir") {
     render('usuarios/form_usuarios.php', ['title' => 'Cadastrar Usuário!']);
 }
