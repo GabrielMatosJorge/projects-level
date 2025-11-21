@@ -37,12 +37,10 @@
             <th>data de nascimento</th>
             <th>celular</th>
             <th>rua</th>
-            <th>numero</th>
-            <th>complemento</th>
+            <th>numero</th> 
             <th>bairro</th>
             <th>cidade</th>
-            <th>cep</th>
-            <th>estado</th>
+
     
           </tr>
         </thead>
@@ -51,17 +49,19 @@
           <tr>
             <td><?=  $u['id_usuario'] ?> </td>
             <td><?=  $u['nome'] ?></td>
-            <td><?=  $u['cpf'] ?></td>
-            <td><?=  $u['data_nascimento'] ?></td>
+            <td><?=  $u['email'] ?></td>
             <td><?=  $u['celular'] ?></td>
-            <td><?=  $u['rua'] ?></td>
+
+            <td><?=  $u['data_nascimento'] ?></td>
+
             <td><?=  $u['numero'] ?></td>
-            <td><?=  $u['complemento'] ?></td>
+
             <td><?=  $u['bairro'] ?></td>
+
             <td><?=  $u['cidade'] ?></td>
             <td><?=  $u['cep'] ?></td>
             <td><?=  $u['estado'] ?></td>
-            <td><?=  $u['email'] ?></td>
+            
             <td><?=  $u['nivel_de_acesso'] ?></td>
           </tr>
            

@@ -29,11 +29,13 @@ class Usuario {
 
             $senha_criptografada = password_hash($dados['senha'], PASSWORD_BCRYPT);
 
-            $sql = "INSERT INTO usuarios (nome, cpf, data_nascimento, celular, rua, numero, complemento, bairro, cidade, cep, estado, email, nivel_de_acesso, senha";
-            $sql .= "VALUES (:nome, :cpf, :data_nascimento, :celular, :rua, :numero, :complemento, :bairro, :cidade, :cep, :estado, :email)";
+            $sql = "INSERT INTO usuarios 
+                (nome, cpf, data_nascimento, celular, rua, numero, bairro, cidade, cep, estado, email, nivel_de_acesso) 
+                VALUES 
+                (:nome, :cpf, :data_nascimento, :celular, :rua, :numero, :bairro, :cidade, :cep, :estado, :email, :nivel_de_acesso)";
 
-            $stant = $pdo->prepare($sql);
-           $stant->bindParam(':nome', $dados['nome'], PDO::PARAM_STR);
+           $stmt = $pdo->prepare($sql);
+           $stmt->bindParam(':nome', $dados['nome'], PDO::PARAM_STR);
         } catch (PDOException $e) {
             echo "Erro ao Inserir: " . $e->getMessage();
             exit;

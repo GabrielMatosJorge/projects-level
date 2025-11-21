@@ -14,64 +14,49 @@
 
 
 
-          <main class="container my-5">
-  <h2 class="mb-4">Lista de Produtos</h2>
+  <main class="container my-5">
+   <h2 class="mb-4">Lista de Produtos</h2>
+    
+   <table class="table table-bordered table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>ID</th>
+            <th>NOME</th>
+            <th>EMAIL</th>
+            <th>CELULAR</th>
+            
+            <th>data de nascimento</th>
+            <th>numero</th>
+            <th>bairro</th>
+            <th>cidade</th> 
+            <th>cep</th>
+            <th>estado</th>
+            <th>nivel</th>
 
-  <ul class="list-group">
-    <li
-      class="list-group-item d-flex flex-wrap justify-content-between align-items-center">
-      <div class="col-12 col-md-9">
-        <strong class="me-2">Nome:</strong>
-        <span>Corrediça de 40cm Telescópica Larga</span>
-        <br />
-
-        <strong class="me-2">Descrição do Produto:</strong>
-        <span>Ferragem essencial para móveis, que proporcionam o movimento
-          suave de abertura e fechamento de gavetas e prateleiras.</span>
-        <br />
-
-        <strong class="me-2">Quantidade em Estoque:</strong>
-        <span>32</span>
-        <br />
-
-        <strong class="me-2">Valor Unitário:</strong>
-        <span>R$ 37,00 / Unidade</span> <br />
-
-        <strong class="me-2">Categoria:</strong>
-        <span>Ferragens</span>
-      </div>
-
-      <div class="col-12 col-md-3 text-md-end mt-3 mt-md-0">
-        <button class="btn btn-warning btn-sm me-2">Editar</button>
-
-        <button class="btn btn-danger btn-sm">Excluir</button>
-      </div>
-    </li>
-
-    <li
-      class="list-group-item d-flex flex-wrap justify-content-between align-items-center">
-      <div class="col-12 col-md-9">
-        <strong class="me-2">Nome:</strong>
-        <span>Caixa Parafuso 3,5x40 - 1000pc</span>
-        <br />
-
-        <strong class="me-2">Descrição do Produto:</strong>
-        <span>O elemento essencial de fixação de duas ou mais superfícies, combinadas ou em junções diferentes</span>
-        <br />
-
-        <strong class="me-2">Quantidade em Estoque:</strong>
-        <span>12</span>
-        <br />
-
-        <strong class="me-2">Valor Unitário:</strong>
-        <span>R$ 55,00 / Unidade</span> <br />
-
-        <strong class="me-2">Categoria:</strong>
-        <span>Buchas e Parafusos</span>
-      </div>
-    </li>
-  </ul>
-</main>
+    
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach($produtos as $u):  ?>
+          <tr>
+            <td><?=  $u['id_produto'] ?> </td>
+            <td><?=  $u['nome'] ?></td>
+            <td><?=  $u['email'] ?></td>
+            <td><?=  $u['celular'] ?></td>
+            <td><?=  $u['data_nascimento'] ?></td>
+            <td><?=  $u['numero'] ?></td>
+            <td><?=  $u['bairro'] ?></td>
+            <td><?=  $u['cidade'] ?></td>
+            <td><?=  $u['cep'] ?></td>
+            <td><?=  $u['estado'] ?></td>
+            <td><?=  $u['nivel_de_acesso'] ?></td>
+          </tr>
+           
+          <?php endforeach ?>
+          </tbody>            
+      </table>
+  
+  </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>

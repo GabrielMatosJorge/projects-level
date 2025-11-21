@@ -12,14 +12,14 @@ CREATE TABLE usuarios (
     celular VARCHAR(20), -- celular com DDD
     rua VARCHAR(255), -- nome da rua
     numero VARCHAR(10), -- número da residência
-    complemento VARCHAR(50), -- complemento (ex: apto)
+
     bairro VARCHAR(255), -- bairro
     cidade VARCHAR(255), -- cidade
     cep VARCHAR(10), -- CEP
     estado CHAR(2), -- estado (ex: SP, RJ)
-    email VARCHAR(255) NOT NULL, -- e-mail válido
+    email VARCHAR(255) NOT NULL, -- e-mail válido    
     nivel de acesso ENUM('Administrador', 'Funcionário', 'Cliente') NOT NULL, -- tipo de usuário
-    senha VARCHAR(255) NOT NULL, -- senha criptografada
+    
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- data de criação
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- data de alteração
     deleted_at TIMESTAMP NULL DEFAULT NULL -- marcação de exclusão lógica
