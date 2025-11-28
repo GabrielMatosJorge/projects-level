@@ -31,8 +31,8 @@ class Produto {
 
         $senha_criptografada = password_hash($dados['senha'], PASSWORD_BCRYPT);
 
-        $sql = "INSERT INTO produtos (nome, cpf, data_nascimento, celular, rua, numero, complemento, bairro, cidade, cep, estado, email, nivel_acesso, genero, senha)";
-        $sql .= " VALUES (:nome, :cpf, :data_nascimento, :celular, :rua, :numero, :complemento, :bairro, :cidade, :cep, :estado, :email, :nivel_acesso, :genero, :senha)";
+        $sql = "INSERT INTO produtos (nome, cpf, data_nascimento, celular, rua, numero, complemento, bairro, cidade, cep, estado, email, nivel_acesso)";
+        $sql .= " VALUES (:nome, :cpf, :data_nascimento, :celular, :rua, :numero, :complemento, :bairro, :cidade, :cep, :estado, :email, :nivel_acesso)";
 
         // Prepara o SQL para ser inserido no BD e limpa códigos maliciosos
         $stmt = $pdo->prepare($sql);

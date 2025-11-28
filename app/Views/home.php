@@ -6,10 +6,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&family=Public+Sans:ital@1&display=swap" rel="stylesheet">
-    <link rel="stylesheet"  href="/../css/style.css">
+    <link rel="stylesheet"  href="/../css/styles.css">
     <title><?= $title ?></title>
 </head>
-<body>
+
+  
+<body class="superinfo-cm">
     
 <div class="superinfo-bg">
     <div class="superinfo">

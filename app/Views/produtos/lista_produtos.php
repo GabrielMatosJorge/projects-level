@@ -49,7 +49,7 @@
             <td><?=  $u['cidade'] ?></td>
             <td><?=  $u['cep'] ?></td>
             <td><?=  $u['estado'] ?></td>
-            <td><?=  $u['nivel_de_acesso'] ?></td>
+            <td><?=  $u['nivel_acesso'] ?></td>
           </tr>
            
           <?php endforeach ?>

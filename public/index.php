@@ -1,4 +1,5 @@
 <?php
+session_start(); //inicia a sessao
 // Importa o autoload do Composer para carregar as rotas
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -52,6 +53,9 @@ $controller->listar();
 
 } else if ($url == "/usuarios/inserir") {
     render('usuarios/form_usuarios.php', ['title' => 'Cadastrar Usuário!']);
+} else if ($url == "/usuarios/salvar" && $_SERVER['REQUEST_METHOD'] == 'POST'){
+    $controller = new UsuarioController(); 
+    $controller->salvar();
 }
 
 // PRODUTOS

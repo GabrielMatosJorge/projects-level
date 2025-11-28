@@ -11,8 +11,9 @@
 
 <body class="container">
   
-    <form action="usuarios/lista_usuarios" method="get">
-  <h3 class="mb-4">Cadastro de Usuários</h3>
+<form action="/usuarios/salvar" method="POST">
+       <h3 class="mb-4">Cadastro de Usuários</h3>
+
   <div class="row mb-3 text-black fw-bold">
     
     <div class="col-md-6">
@@ -25,7 +26,7 @@
     </div>
     <div class="col-md-6">
       <label for="senha" class="form-label">senha</label>
-      <input type="number" class="form-control" id="senha" name="senha" required>
+      <input type="text" class="form-control" id="senha" name="senha" required>
     </div>
 
   </div>
@@ -37,11 +38,12 @@
       <input type="text" class="form-control" id="cpf" name="cpf">
     </div>
     <div class="col-md-6">
-      <label for="nivel" class="form-label">Nível de Acesso</label>
-      <select class="form-select" id="nivel" name="nivel" required>
+      <label for="nivel_de_acesso" class="form-label">Nível de Acesso</label>
+      <select class="form-select" id="nivel_de_acesso" name="nivel_de_acesso" required>
         <option value="">-- ESCOLHA --</option>
-        <option value="admin">Administrador</option>
-        <option value="usuario">Usuário</option>
+        <option value="administrador">Administrador</option>
+        <option value="cliente">Usuário</option>
+        <option value="funcionario">funcionario</option>
       </select>
     </div>
   </div>
@@ -52,15 +54,15 @@
       <input type="text" class="form-control" id="celular" name="celular">
     </div>
     <div class="col-md-6">
-      <label for="nascimento" class="form-label">Data de Nascimento</label>
-      <input type="date" class="form-control" id="nascimento" name="nascimento">
+      <label for="data_nascimento" class="form-label">Data de Nascimento</label>
+      <input type="date" class="form-control" id="data_nascimento" name="data_nascimento">
     </div>
   </div>
 
   <div class="row mb-3 text-black fw-bold">
     <div class="col-md-4">
       <label for="cep" class="form-label">CEP</label>
-      <input type="text" class="form-control" id="cep" name="cep">
+      <input type="number" class="form-control" id="cep" name="cep">
     </div>
     <div class="col-md-8">
       <label for="rua" class="form-label">Rua</label>
