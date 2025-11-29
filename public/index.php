@@ -1,10 +1,15 @@
 <?php
+
+
+
 session_start(); //inicia a sessao
 // Importa o autoload do Composer para carregar as rotas
 require __DIR__ . '/../vendor/autoload.php';
 
 use App\Controllers\ProdutoController;
 use App\Controllers\UsuarioController;
+
+
 
 // Função para renderizar as telas com layout
 function render($view, $data = [])
@@ -30,6 +35,7 @@ function render_sem_template($view, $data = [])
 
 // Obtém a URL do navegador
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
 
 // NAVEGAÇÃO GERAL
 
@@ -60,11 +66,16 @@ $controller->listar();
 
 // PRODUTOS
 
-else if ($url == "/produtos") {
+else if ($url == "/produtos/listar") {
 
-$controller = new ProdutoController();
-$controller->listar();
+    $controller = new ProdutoController();
+    $controller->listar();
 
-} else if ($url == "/produtos/inserir") {
-    render('produtos/form_produtos.php', ['title' => 'Cadastrar Produto!']);
+    } else if ($url == "/produtos/inserir") {
+        render('produtos/form_produtos.php', ['title' => 'Cadastrar Produto!']);
+    } else if ($url == "/produtos/salvar" && $_SERVER['REQUEST_METHOD'] == 'POST'){
+
+    $controller = new ProdutoController(); 
+    $controller-> salvar();
 }
+

@@ -1,49 +1,55 @@
-<?php 
-// Em qual pasta ele está
+<?php
+
 namespace App\Models;
 
-use PDO; 
+use PDO;
 use App\Core\Database;
 use PDOException;
 
-// Mesmo nome do Arquivo
-class Produto {
- 
-    // Aqui declaramos uma função para cada operação do CRUD
 
-    // Buscar todos os usuários no BD
+class Produto {
+
     public static function buscarTodos(){
-        // Primeiro vamos conectar no Banco de Dados
-        // Precisamos importar o PDO antes de a classe
-        // Como vamos utilizar arquivo DATABASE, importamos ele também
+
         $pdo = Database::conectar();
 
-        // Geramos o Script SQL de consulta
+
         $sql = "SELECT * FROM produtos";
 
-        // Retornamos o resultado da consulta
+        
         return $pdo->query($sql)->fetchAll();
     }
 
     public static function salvar($dados){
-       try{
-        $pdo = Database::conectar();
+        try {
+            $pdo = Database::conectar();
 
-        $senha_criptografada = password_hash($dados['senha'], PASSWORD_BCRYPT);
+            $sql = "INSERT INTO produtos 
+            (nome, comprovante, contato, data_entrega, cpf, tamanho_produto, cep, endereco, numero, complemento, cidade)
+            VALUES 
+            (:nome, :comprovante, :contato, :data_entrega, :cpf, :tamanho_produto, :cep, :endereco, :numero, :complemento, :cidade)";
 
-        $sql = "INSERT INTO produtos (nome, cpf, data_nascimento, celular, rua, numero, complemento, bairro, cidade, cep, estado, email, nivel_acesso)";
-        $sql .= " VALUES (:nome, :cpf, :data_nascimento, :celular, :rua, :numero, :complemento, :bairro, :cidade, :cep, :estado, :email, :nivel_acesso)";
+            $stmt = $pdo->prepare($sql);
 
-        // Prepara o SQL para ser inserido no BD e limpa códigos maliciosos
-        $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':nome',            $dados['nome']);
+            $stmt->bindParam(':comprovante',     $dados['comprovante']);
+            $stmt->bindParam(':contato',         $dados['contato']);
+            $stmt->bindParam(':data_entrega',    $dados['data_entrega']);
+            $stmt->bindParam(':cpf',             $dados['cpf']);
+            $stmt->bindParam(':tamanho_produto', $dados['tamanho_produto']);
+            $stmt->bindParam(':cep',             $dados['cep']);
+            $stmt->bindParam(':endereco',        $dados['endereco']);
+            $stmt->bindParam(':numero',          $dados['numero']);
+            $stmt->bindParam(':complemento',     $dados['complemento']);
+            $stmt->bindParam(':cidade',          $dados['cidade']);
 
-        // Passa as variaveis para o SQL
-        $stmt->bindParam(':nome', $dados['nome'], PDO::PARAM_STR);
-       
-    }catch (PDOException $e){
-        echo "Erro ao inserir: " . $e->getMessage();
-        exit;
-    }
-        
+            $stmt->execute();
+
+            return $pdo->lastInsertId();
+
+        } catch (PDOException $e) {
+            echo "Erro ao inserir: " . $e->getMessage();
+            exit;
+        }
     }
 }
